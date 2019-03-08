@@ -2,7 +2,7 @@
   Be sure to import in all of the action types from `../actions`
 */
 
-import { SUCCESS, FAILURE } from '../actions';
+import { SUCCESS } from '../actions';
 
 const initialState = {
   smurfs: []

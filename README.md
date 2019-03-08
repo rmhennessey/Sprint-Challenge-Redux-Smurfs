@@ -23,8 +23,25 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+ACTIONS: Actions - plain JavaScript objects - are payloads of information that send data from your application to your store. They must have a type property that indicates the type of action being performed. Actions only describe what happened, but don't describe how the application's state changes.
+
+REDUCERS:  The reducer is a pure function that takes the previous state and an action, and returns the next state. They specify how the application's state changes in response to actions sent to the store. 
+
+STORE: A store holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+
+
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global while component state is local. Libraries like Redux use what they call stores to hold application state. That means any component, anywhere in the app can access it (kind of like a database) so long as they hook into it.
+
+Component state however, lives within that specific component. As such, it can only be updated within that component and passed down to its children via props.
+
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux Thunk is middleware that allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods dispatch and getState as parameters.
 
 ## Project Set Up
 
