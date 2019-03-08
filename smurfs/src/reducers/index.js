@@ -2,6 +2,24 @@
   Be sure to import in all of the action types from `../actions`
 */
 
+import { SUCCESS, FAILURE } from '../actions';
+
+const initialState = {
+  smurfs: []
+};
+
+export const smurfReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload
+      }
+      default:
+        return state;
+  }
+}
+
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
  {
